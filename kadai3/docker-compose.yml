@@ -1,0 +1,16 @@
+version: '3'
+services: 
+  server:
+    depends_on: 
+      - db
+    build: ./server
+    ports: 
+      - '8080:8080'
+  db:
+    build:  ./db
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: kadai
+      POSTGRES_PASSWORD: kadai
+      POSTGRES_DB: kadai
